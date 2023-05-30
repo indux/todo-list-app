@@ -2,14 +2,16 @@ import React from "react";
 
 const TodoCounter = ({ total, completed }) => {
   return (
-    <div className="flex flex-col items-center mt-10">
-      <h1 className="text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-        Your tasks
-      </h1>
-      <h3 className="text-xl font-semibold text-[#330a37] mt-1">
-        Completed {completed} to {total}
-      </h3>
-      <div className="mt-6 flex w-60 items-center space-x-2 rounded-2xl bg-gray-50 px-4 text-[#2f0f33] ring-2 ring-gray-300 focus-within:ring-[#2f0f33]">
+    <section className="flex flex-col items-center mt-3">
+      <div className="text-center">
+        <h1 className="text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#eaf0ed] to-[#0AE98A]">
+          Your tasks
+        </h1>
+        <h3 className="text-xl font-semibold mt-1">
+          Completed {completed} to {total}
+        </h3>
+      </div>
+      <div className="mt-6 flex w-60 items-center space-x-2 rounded-2xl bg-gray-50 px-4 text-[#0C1633] ring-2 ring-gray-300 focus-within:ring-[#0AE98A] mb-10">
         <input
           type="text"
           placeholder="Search"
@@ -18,7 +20,7 @@ const TodoCounter = ({ total, completed }) => {
         <button>
           <svg
             fill="none"
-            className="w-6 text-[#2f0f33]"
+            className="w-6 text-[#0C1633]"
             stroke="currentColor"
             stroke-width="1.5"
             viewBox="0 0 24 24"
@@ -33,7 +35,7 @@ const TodoCounter = ({ total, completed }) => {
           </svg>
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 
