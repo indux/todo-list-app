@@ -17,7 +17,14 @@ const TodoTask = () => {
             />
           </div>
         </div>
-        <button className="flex w-44 items-center justify-center rounded-2xl border-b-4 border-b-[#070c1b] bg-[#0C1633] text-[#0AE98A] py-3 text-sm font-bold tracking-wider transition duration-150 ease-in-out active:translate-y-1 active:border-b-transparent">
+        <button
+          className="flex w-44 items-center justify-center rounded-2xl border-b-4 border-b-[#070c1b] bg-[#0C1633] text-[#0AE98A] py-3 text-sm font-bold tracking-wider transition duration-150 ease-in-out active:translate-y-1 active:border-b-transparent"
+          onClick={(event) => {
+            console.log("Le diste click!");
+            console.log(event);
+            console.log(event.target);
+          }}
+        >
           CREATE TASK
           <svg
             className="ml-2 w-6"

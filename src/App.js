@@ -5,17 +5,30 @@ import { TodoItem } from "./components/TodoItem";
 import { TodoTask } from "./components/TodoTask";
 
 const arrTodos = [
-  { text: "Estudiar", completed: false },
-  { text: "Merendar", completed: false },
-  { text: "Descansar", completed: true },
-  { text: "Proyectos", completed: true },
+  { text: "Estudiar", completed: true },
+  { text: "Merendar", completed: true },
+  { text: "Descansar", completed: false },
+  { text: "Proyectos", completed: false },
 ];
 
 const App = () => {
+  const [todos, setTodos] = React.useState(arrTodos);
+  const [searchValue, setSearchValue] = React.useState("");
+
+  const completedTodos = todos.filter((todo) => todo.completed).length;
+  const totalTodos = todos.length;
+
+  console.log("Los usuarios buscan TODOs de " + searchValue);
+
   return (
     <>
       <section className="w-full">
-        <TodoCounter completed={4} total={10} />
+        <TodoCounter
+          completed={completedTodos}
+          total={totalTodos}
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        />
         <TodoList>
           {arrTodos.map((todo) => (
             <TodoItem

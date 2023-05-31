@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
-const TodoCounter = ({ total, completed }) => {
+const TodoCounter = ({ total, completed, searchValue, setSearchValue }) => {
   return (
     <section className="flex flex-col items-center mt-3">
       <div className="text-center">
@@ -16,6 +16,10 @@ const TodoCounter = ({ total, completed }) => {
           type="text"
           placeholder="Search"
           className="py-3 w-full border-none bg-transparent outline-none"
+          value={searchValue}
+          onChange={(event) => {
+            setSearchValue(event.target.value);
+          }}
         />
         <button>
           <svg
