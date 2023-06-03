@@ -1,18 +1,17 @@
 import React from "react";
-import { TodoCounter } from "./components/TodoCounter";
-import { TodoList } from "./components/TodoList";
-import { TodoItem } from "./components/TodoItem";
-import { TodoTask } from "./components/TodoTask";
+import { AppUI } from "./AppUI";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
-const arrTodos = [
-  { text: "Estudiar", completed: true },
-  { text: "Merendar", completed: true },
-  { text: "Descansar", completed: false },
-  { text: "Proyectos", completed: false },
-];
+// const arrTodos = [
+//   { text: "Estudiar", completed: true },
+//   { text: "Merendar", completed: true },
+//   { text: "Descansar", completed: false },
+//   { text: "Proyectos", completed: false },
+// ];
+// localStorage.setItem("TODOS_V1", JSON.stringify(arrTodos))
 
 const App = () => {
-  const [todos, setTodos] = React.useState(arrTodos);
+  const [todos, saveTodo] = useLocalStorage("TODOS_V1", []);
   const [searchValue, setSearchValue] = React.useState("");
 
   const completedTodos = todos.filter((todo) => todo.completed).length;
@@ -22,31 +21,35 @@ const App = () => {
     search.text.toLowerCase().includes(searchValue)
   );
 
-  // console.log("Los usuarios buscan TODOs de " + searchValue);
+  const completeTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+
+    newTodos[todoIndex].completed = true;
+
+    saveTodo(newTodos);
+  };
+
+  const deleteTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text === text);
+
+    newTodos.splice(todoIndex, 1);
+
+    saveTodo(newTodos);
+  };
 
   return (
-    <>
-      <section className="w-full">
-        <TodoCounter
-          completed={completedTodos}
-          total={totalTodos}
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-        />
-        <TodoList>
-          {searchedTodos.map((todo) => (
-            <TodoItem
-              key={todo.text}
-              text={todo.text}
-              completed={todo.completed}
-            />
-          ))}
-        </TodoList>
-      </section>
-
-      <TodoTask />
-    </>
+    <AppUI
+      completedTodos={completedTodos}
+      totalTodos={totalTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={searchedTodos}
+      completeTodo={completeTodo}
+      deleteTodo={deleteTodo}
+    />
   );
 };
 
-export default App;
+export { App };
