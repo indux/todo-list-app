@@ -2,16 +2,21 @@ import React from "react";
 import { AppUI } from "./AppUI";
 import { useLocalStorage } from "./hooks/useLocalStorage";
 
-// const arrTodos = [
-//   { text: "Estudiar", completed: true },
-//   { text: "Merendar", completed: true },
-//   { text: "Descansar", completed: false },
-//   { text: "Proyectos", completed: false },
-// ];
-// localStorage.setItem("TODOS_V1", JSON.stringify(arrTodos))
+const arrTodos = [
+  { text: "Estudiar", completed: true },
+  { text: "Merendar", completed: true },
+  { text: "Descansar", completed: false },
+  { text: "Proyectos", completed: false },
+];
+localStorage.setItem("TODOS_V1", JSON.stringify(arrTodos));
 
 const App = () => {
-  const [todos, saveTodo] = useLocalStorage("TODOS_V1", []);
+  const {
+    item: todos,
+    saveItem: saveTodo,
+    loading,
+    error,
+  } = useLocalStorage("TODOS_V1", []);
   const [searchValue, setSearchValue] = React.useState("");
 
   const completedTodos = todos.filter((todo) => todo.completed).length;
@@ -41,6 +46,8 @@ const App = () => {
 
   return (
     <AppUI
+      loading={loading}
+      error={loading}
       completedTodos={completedTodos}
       totalTodos={totalTodos}
       searchValue={searchValue}

@@ -2,7 +2,7 @@ import React from "react";
 
 const TodoTask = () => {
   return (
-    <section className="bg-[#0AE98A] rounded-xl p-5 text-[#0C1633] mt-16 w-full">
+    <section className="bg-[#0AE98A] rounded-xl p-5 text-[#0C1633] mt-10 w-full">
       <div className="space-y-6">
         <div>
           <h2 className="text-4xl md:text-5x1 font-bold">Create new task</h2>
@@ -30,14 +30,11 @@ const TodoTask = () => {
             className="ml-2 w-6"
             fill="none"
             stroke="currentColor"
-            stroke-width="1.5"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
               d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
             ></path>
           </svg>
