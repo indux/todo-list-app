@@ -37,4 +37,12 @@ const useLocalStorage = (itemName, initialValue) => {
   return { item, saveItem, loading, error };
 };
 
+// const arrTodos = [
+//   { text: "Estudiar", completed: true },
+//   { text: "Merendar", completed: true },
+//   { text: "Descansar", completed: false },
+//   { text: "Proyectos", completed: false },
+// ];
+// localStorage.setItem("TODOS_V1", JSON.stringify(arrTodos));
+
 export { useLocalStorage };

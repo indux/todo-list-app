@@ -6,27 +6,17 @@ import { TodoTask } from "./components/TodoTask";
 import { TodosLoading } from "./components/TodosLoading";
 import { TodosError } from "./components/TodosError";
 import { TodosEmpty } from "./components/TodosEmpty";
+import { TodoContext } from "./context/TodoContext";
 
-const AppUI = ({
-  loading,
-  error,
-  completedTodos,
-  totalTodos,
-  searchValue,
-  setSearchValue,
-  searchedTodos,
-  completeTodo,
-  deleteTodo,
-}) => {
+const AppUI = () => {
+  const { loading, error, searchedTodos, completeTodo, deleteTodo } =
+    React.useContext(TodoContext);
+
   return (
     <>
       <section className="w-full">
-        <TodoCounter
-          completed={completedTodos}
-          total={totalTodos}
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-        />
+        <TodoCounter />
+
         <TodoList>
           {loading && (
             <>
