@@ -3,9 +3,9 @@ import { TodoCounter } from "./components/TodoCounter";
 import { TodoList } from "./components/TodoList";
 import { TodoItem } from "./components/TodoItem";
 import { TodoTask } from "./components/TodoTask";
-import { TodosLoading } from "./components/TodosLoading";
-import { TodosError } from "./components/TodosError";
-import { TodosEmpty } from "./components/TodosEmpty";
+import { TodosLoading } from "./components/skeleton/TodosLoading";
+import { TodosError } from "./components/skeleton/TodosError";
+import { TodosEmpty } from "./components//skeleton/TodosEmpty";
 import { TodoContext } from "./context/TodoContext";
 
 const AppUI = () => {
@@ -42,6 +42,8 @@ const AppUI = () => {
       </section>
 
       <TodoTask />
+
+
     </>
   );
 };
