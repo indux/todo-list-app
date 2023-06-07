@@ -19,6 +19,15 @@ const TodoProvider = ({ children }) => {
     search.text.toLowerCase().includes(searchValue)
   );
 
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      text,
+      completed: false,
+    });
+    saveTodo(newTodos);
+  };
+
   const completeTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
@@ -42,6 +51,7 @@ const TodoProvider = ({ children }) => {
       value={{
         loading,
         error,
+        addTodo,
         completedTodos,
         totalTodos,
         searchValue,
@@ -55,23 +65,5 @@ const TodoProvider = ({ children }) => {
     </TodoContext.Provider>
   );
 };
-
-// const TodoConsumer = () => {
-//   return (
-//     <TodoContext.Consumer
-//       value={{
-//         loading,
-//         error,
-//         completedTodos,
-//         totalTodos,
-//         searchValue,
-//         setSearchValue,
-//         searchedTodos,
-//         completeTodo,
-//         deleteTodo,
-//       }}
-//     ></TodoContext.Consumer>
-//   );
-// };
 
 export { TodoContext, TodoProvider };

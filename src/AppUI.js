@@ -4,12 +4,12 @@ import { TodoList } from "./components/TodoList";
 import { TodoItem } from "./components/TodoItem";
 import { TodoTask } from "./components/TodoTask";
 import { TodosLoading } from "./components/skeleton/TodosLoading";
-import { TodosError } from "./components/skeleton/TodosError";
+// import { TodosError } from "./components/skeleton/TodosError";
 import { TodosEmpty } from "./components//skeleton/TodosEmpty";
 import { TodoContext } from "./context/TodoContext";
 
 const AppUI = () => {
-  const { loading, error, searchedTodos, completeTodo, deleteTodo } =
+  const { loading, searchedTodos, completeTodo, deleteTodo } =
     React.useContext(TodoContext);
 
   return (
@@ -42,8 +42,6 @@ const AppUI = () => {
       </section>
 
       <TodoTask />
-
-
     </>
   );
 };
