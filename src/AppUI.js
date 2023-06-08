@@ -14,34 +14,37 @@ const AppUI = () => {
 
   return (
     <>
-      <section className="w-full">
-        <TodoCounter />
+      <section className="md:grid md:grid-cols-2 md:space-x-10 md:justify-center">
+        <section className="md:w-96">
+          <TodoCounter />
 
-        <TodoList>
-          {loading && (
-            <>
-              <TodosLoading />
-              <TodosLoading />
-              <TodosLoading />
-              <TodosLoading />
-            </>
-          )}
-          {/* {error && <TodosError />} */}
-          {!loading && searchedTodos.length === 0 && <TodosEmpty />}
+          <TodoList>
+            {loading && (
+              <>
+                <TodosLoading />
+                <TodosLoading />
+                <TodosLoading />
+                <TodosLoading />
+              </>
+            )}
+            {/* {error && <TodosError />} */}
+            {!loading && searchedTodos.length === 0 && <TodosEmpty />}
 
-          {searchedTodos.map((todo) => (
-            <TodoItem
-              key={todo.text}
-              text={todo.text}
-              completed={todo.completed}
-              onComplete={() => completeTodo(todo.text)}
-              onDelete={() => deleteTodo(todo.text)}
-            />
-          ))}
-        </TodoList>
+            {searchedTodos.map((todo, todoIndex) => (
+              <TodoItem
+                key={`${todo.text}_${todoIndex}`}
+                text={todo.text}
+                completed={todo.completed}
+                onComplete={() => completeTodo(todo.text)}
+                onDelete={() => deleteTodo(todo.text)}
+              />
+            ))}
+          </TodoList>
+        </section>
+        <section className="md:w-96">
+          <TodoTask />
+        </section>
       </section>
-
-      <TodoTask />
     </>
   );
 };

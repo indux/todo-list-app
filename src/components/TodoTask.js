@@ -8,8 +8,11 @@ const TodoTask = () => {
 
   const preventDefault = (event) => {
     event.preventDefault();
-    addTodo(inputValue);
-    setTnputValue("");
+
+    if (inputValue !== "") {
+      addTodo(inputValue);
+      setTnputValue("");
+    }
   };
 
   const inputDataUser = (event) => {
@@ -17,7 +20,7 @@ const TodoTask = () => {
   };
 
   return (
-    <section className="bg-[#0AE98A] rounded-xl p-5 text-[#0C1633] mt-10 w-full">
+    <section className="bg-[#0AE98A] rounded-xl p-5 text-[#0C1633] mt-14 md:mt-0 w-full mb-14 md:mb-0">
       <div className="space-y-4">
         <h2 className="text-4xl md:text-5x1 font-bold">Create new task</h2>
         <h3 className="text-base font-medium">Task Name</h3>
@@ -48,6 +51,14 @@ const TodoTask = () => {
             </svg>
           </button>
         </form>
+        <div className="flex justify-center pt-5">
+          <img
+            className="w-full px-2 mb-2.5"
+            src="https://firebasestorage.googleapis.com/v0/b/picassoai.appspot.com/o/task%2Fundraw_completed_tasks_vs6q.svg?alt=media&token=4d46537a-1dac-44e1-9c82-bf2749647425&_gl=1*1shufuz*_ga*MTIyMTk1ODg3NS4xNjgzOTA5NTk5*_ga_CW55HF8NVT*MTY4NjE4MTQ0Ny41LjEuMTY4NjE4MTQ4Mi4wLjAuMA.."
+            alt="Task"
+            draggable="false"
+          />
+        </div>
       </div>
     </section>
   );

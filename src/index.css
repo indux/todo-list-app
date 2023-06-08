@@ -6,18 +6,11 @@ body {
   background-color: #0c1633;
 }
 
-main {
+html {
   color: #0ae98a;
   font-family: "Roboto", sans-serif;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-@media (min-width: 700px) {
-  main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+  height: 100%;
+  display: grid;
+  place-items: center;
 }

@@ -19,10 +19,15 @@ const TodoProvider = ({ children }) => {
     search.text.toLowerCase().includes(searchValue)
   );
 
+  let counter = "";
+
   const addTodo = (text) => {
     const newTodos = [...todos];
+    const uniqueText = `${text}${counter}`;
+    counter++;
+
     newTodos.push({
-      text,
+      text: uniqueText,
       completed: false,
     });
     saveTodo(newTodos);
@@ -32,18 +37,20 @@ const TodoProvider = ({ children }) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
 
-    newTodos[todoIndex].completed = true;
-
-    saveTodo(newTodos);
+    if (todoIndex !== -1) {
+      newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+      saveTodo(newTodos);
+    }
   };
 
   const deleteTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
 
-    newTodos.splice(todoIndex, 1);
-
-    saveTodo(newTodos);
+    if (todoIndex !==- 1) {
+      newTodos.splice(todoIndex, 1);
+      saveTodo(newTodos);
+    }
   };
 
   return (

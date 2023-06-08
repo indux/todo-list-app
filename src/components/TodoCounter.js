@@ -6,7 +6,7 @@ const TodoCounter = () => {
     React.useContext(TodoContext);
 
   return (
-    <section className="flex flex-col items-center mt-3">
+    <div className="flex flex-col items-center mt-5 md:mt-0">
       <div className="text-center">
         <h1 className="text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#eaf0ed] to-[#0AE98A]">
           Your tasks
@@ -38,7 +38,7 @@ const TodoCounter = () => {
           </svg>
         </button>
       </div>
-    </section>
+    </div>
   );
 };
 

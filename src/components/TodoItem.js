@@ -2,7 +2,7 @@ import React from "react";
 
 const TodoItem = (props) => {
   return (
-    <section className="my-4 border-gray-300">
+    <li className="my-4 border-gray-300">
       <div
         className={`py-4 px-4 flex w-full rounded-2xl border-4 items-center justify-between ${
           props.completed && "border-[#0AE98A]"
@@ -11,7 +11,7 @@ const TodoItem = (props) => {
         <div className="truncate flex space-x-3 items-center text-gray-300">
           <button onClick={props.onComplete}>
             <svg
-              className={`w-8 h-8 hover:text-[#0AE98A] ${
+              className={`w-8 h-8 ${
                 props.completed && "text-[#0AE98A]"
               }`}
               fill="currentColor"
@@ -48,7 +48,7 @@ const TodoItem = (props) => {
           </svg>
         </button>
       </div>
-    </section>
+    </li>
   );
 };
 

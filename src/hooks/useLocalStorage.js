@@ -37,11 +37,12 @@ const useLocalStorage = (itemName, initialValue) => {
   return { item, saveItem, loading, error };
 };
 
+// ENTORNO DE DESARROLLO (TEST):
 // const arrTodos = [
-//   { text: "Estudiar", completed: true },
-//   { text: "Merendar", completed: true },
-//   { text: "Descansar", completed: false },
-//   { text: "Proyectos", completed: false },
+//   { text: "Eat Snack", completed: true },
+//   { text: "Go Run", completed: true },
+//   { text: "Sleep 8 Hours", completed: false },
+//   { text: "Study", completed: false },
 // ];
 // localStorage.setItem("TODOS_V1", JSON.stringify(arrTodos));
 
