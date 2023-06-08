@@ -38,14 +38,14 @@ Añadiendo un buscador de tareas me aseguro de brindar a los usuarios una forma 
 
 [![2.png](https://i.postimg.cc/26fSsxF1/2.png)](https://postimg.cc/McdwRVLw)
 
-## Guardado automático de las tareas en el local storage
-
-Para mejorar la experiencia del usuario, he implementado el guardado automático de las tareas en el local storage. Esto significa que todas las tareas creadas o modificadas se almacenan automáticamente en el almacenamiento local del dispositivo del usuario. De esta manera, incluso si se cierra la aplicación o se actualiza la página, las tareas se mantendrán guardadas y estarán disponibles cuando el usuario vuelva a acceder a Todo List. Esta funcionalidad ofrece comodidad y tranquilidad, ya que los usuarios no tienen que preocuparse por perder su progreso o información importante.
-
-[![4.png](https://i.postimg.cc/zvKSJ744/4.png)](https://postimg.cc/q6BCwsJG)
-
 ## Uso de Tailwind & limpieza del código
 
 Al utilizar Tailwind, he podido optimizar el tiempo de desarrollo al aprovechar las clases predefinidas para estilizar rápidamente los elementos y componentes de Todo List. El control y la limpieza del código son aspectos esenciales para asegurar un desarrollo de calidad en Todo List. He seguido buenas prácticas de control de versiones utilizando Git y GitHub, lo que nos permite mantener un historial de cambios y colaborar de manera efectiva con otros desarrolladores en un futuro. Además, hemos aplicado técnicas de organización y estructuración del código para mantenerlo limpio, legible y fácil de entender.
 
 [![8.png](https://i.postimg.cc/43f8BDjy/8.png)](https://postimg.cc/xXZyd4fV)
+
+## Guardado automático de las tareas en el local storage
+
+Para mejorar la experiencia del usuario, he implementado el guardado automático de las tareas en el local storage. Esto significa que todas las tareas creadas o modificadas se almacenan automáticamente en el almacenamiento local del dispositivo del usuario. De esta manera, incluso si se cierra la aplicación o se actualiza la página, las tareas se mantendrán guardadas y estarán disponibles cuando el usuario vuelva a acceder a Todo List. Esta funcionalidad ofrece comodidad y tranquilidad, ya que los usuarios no tienen que preocuparse por perder su progreso o información importante.
+
+[![4.png](https://i.postimg.cc/zvKSJ744/4.png)](https://postimg.cc/q6BCwsJG)
